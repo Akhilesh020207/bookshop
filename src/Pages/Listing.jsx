@@ -69,9 +69,7 @@ export default function Listing() {
         ))}
       </Swiper>
 </div>
-
-<div class="col-span-8">
-
+<div class="col-span-6">
       {shareLinkCopied && (
         <p className="fixed top-[23%] right-[5%] font-semibold border-2 border-gray-400 rounded-md bg-white z-10 p-2">
           Link Copied
