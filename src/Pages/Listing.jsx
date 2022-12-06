@@ -43,8 +43,8 @@ export default function Listing() {
   return (
     <>
     <main>
-    <div class="grid grid-flow-row-max gap-x-15 gap-y-4 grid-cols-3 grid-rows-max  pr-2 pl-2  ">
-    <div class="col-span-2 ">
+    <div class="grid grid-flow-row-max   pr-2 pl-2  ">
+    <div class="col-span-8 ">
       <Swiper 
         slidesPerView={1}
         navigation
@@ -57,7 +57,7 @@ export default function Listing() {
         {listing.imgUrls.map((url, index) => (
           <SwiperSlide key={index}>
             <div
-              className=" rounded-lg border-solid border-2 border-rose-500 relative w-full overflow-hidden h-[800px] "
+              className="flex  justify-center items-center rounded-lg border-solid border-2 border-rose-500 relative w-full overflow-hidden h-[800px] center "
               style={{
 
                 background: `url(${listing.imgUrls[index]}) no-repeat`,
@@ -69,7 +69,7 @@ export default function Listing() {
         ))}
       </Swiper>
 </div>
-<div class="col-span-min">
+<div class="col-span-8">
       {shareLinkCopied && (
         <p className="fixed top-[23%] right-[5%] font-semibold border-2 border-gray-400 rounded-md bg-white z-10 p-2">
           Link Copied
