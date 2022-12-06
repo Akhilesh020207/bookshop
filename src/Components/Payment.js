@@ -1,7 +1,7 @@
 import React from 'react'
 import StripeCheckout from 'react-stripe-checkout';
-import { getAuth, updateProfile } from "firebase/auth";
-import Listing from "../Pages/Listing";
+import { getAuth } from "firebase/auth";
+
 
 
 function Payment() {
@@ -16,7 +16,7 @@ function Payment() {
         token={onToken}
         name= {auth.currentUser.displayName}
         currency ="INR"
-        amount = {Listing.regularPrice}
+        amount = "9000000000"
         stripeKey="pk_test_51MASWxSAxlAgsURqlwlBr4qTffS5on7ypKksXqOW6TnUmrIXIc9k0LQuZRCS3r98gHrj7TMR4OHAsf9Lpnn08qdn003hrlzfSp"
       />
 
