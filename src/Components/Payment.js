@@ -7,7 +7,7 @@ import cart from "../Pages/Cart";
 
 
 
-function Payment() {
+export default function Payment({price}) {
     const auth = getAuth();
     const onToken = (token) => {
         console.log(token);
@@ -20,7 +20,7 @@ function Payment() {
         name= {auth.currentUser.displayName}
         currency ="INR"
 
-        amount = "1093900"
+        amount = {{price}}
 
         stripeKey="pk_test_51MASWxSAxlAgsURqlwlBr4qTffS5on7ypKksXqOW6TnUmrIXIc9k0LQuZRCS3r98gHrj7TMR4OHAsf9Lpnn08qdn003hrlzfSp"
       />
@@ -36,4 +36,3 @@ function Payment() {
  </div>
 }
 
-export default Payment;

@@ -393,9 +393,9 @@ export default function Home() {
                 Show more offers
               </p>
             </Link>
-            <ul className="sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
+            <ul className="sm:grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 h-[180px] w-full object-cover hover:scale-105 transition-scale duration-200 ease-in">
               {ScienceLover.map((listing) => (
-                <ListingItem
+                <ListingItem 
                   key={listing.id}
                   listing={listing.data}
                   id={listing.id}
@@ -405,7 +405,7 @@ export default function Home() {
           </div>
         )}
         {DataScienceListings && DataScienceListings.length > 0 && (
-          <div className="m-2 mb-6">
+          <div className="m-2 mb-6 ">
             <h2 className="px-3 text-2xl mt-6 font-semibold">Books for Data Science</h2>
             <Link to="/offers">
               <p className="px-3 text-sm text-blue-600 hover:text-blue-800 transition duration-150 ease-in-out">

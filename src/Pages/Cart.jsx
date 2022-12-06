@@ -37,7 +37,8 @@
 //   )
 // }
 
-// export default Cart
+// export default Cart4
+
 import { FaTrash,FaShoppingCart, } from "react-icons/fa";
 import { GiWhiteBook } from "react-icons/gi";
 import { GiBookshelf } from "react-icons/gi";
@@ -60,11 +61,13 @@ import { db } from "../firebase";
 import Spinner from "../Components/Spinner";
 import ListingItem from "../Components/ListingItem"
 import { list } from "firebase/storage";
+import Payment from "../Components/Payment";
 
-
+let total_amount = 0;
 export default function Cart() {
   const navigate = useNavigate();
   const [listings, setListings] = useState(null);
+  const [price, setPrice] = useState("");
   const [loading, setLoading] = useState(true);
   const [lastFetchedListing, setLastFetchListing] = useState(null);
   const auth = getAuth();
@@ -97,6 +100,7 @@ export default function Cart() {
         });
         setListings(listings);
         setLoading(false);
+        setPrice(total_amount);
       } catch (error) {
         toast.error("Could not fetch listing");
       }
@@ -165,7 +169,7 @@ export default function Cart() {
       toast.error("Could not fetch listing");
     }
   }
-let total_amount = 0;
+
   return (
     <>
     
@@ -236,7 +240,7 @@ let total_amount = 0;
           ))}
           </main>
           <div>
-          <h1 className="text-3xl text-center mt-6 font-bold mb-6">Total Amount: ₹ {total_amount}</h1>
+          <h1 className="text-3xl text-center mt-6 font-bold mb-6"><Payment>Total Amount: ₹ {total_amount}</Payment></h1>
           </div>
           <button
             type="submit"
